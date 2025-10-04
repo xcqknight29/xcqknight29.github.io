@@ -72,12 +72,26 @@
      <div id="messages"></div>
 
      <script type="module">
+
+          // 假设你的JSON文件地址是：https://yourusername.github.io/your-repo/data/data.json
+          fetch('https://yourusername.github.io/your-repo/data/data.json')
+               .then(response => {
+                    if (!response.ok) {
+                         throw new Error('网络响应不正常');
+                    }
+                    return response.json();
+               })
+               .then(data => {
+                    // 在这里处理你的JSON数据
+                    console.log(data);
+               })
+               .catch(error => {
+                    console.error('获取数据时出错:', error);
+               });
+
           // 🔹 引入 Firebase SDK
           import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
           import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
-          
-          
-
 
           // 🔹 替换成你自己的 Firebase 配置
           const firebaseConfig = {
