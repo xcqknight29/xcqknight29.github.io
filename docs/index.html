@@ -83,7 +83,8 @@
                })
                .then(data => {
                     // 在这里处理你的JSON数据
-                    console.log(data);
+                    //console.log(data);
+                    const firebaseConfig = data.json()
                })
                .catch(error => {
                     console.error('获取数据时出错:', error);
@@ -94,15 +95,15 @@
           import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
           // 🔹 替换成你自己的 Firebase 配置
-          const firebaseConfig = {
-               apiKey: "你的APIKEY",
-               authDomain: "你的项目ID.firebaseapp.com",
-               databaseURL: "https://你的项目ID.firebaseio.com",
-               projectId: "你的项目ID",
-               storageBucket: "你的项目ID.appspot.com",
-               messagingSenderId: "发送者ID",
-               appId: "应用ID"
-          };
+          //const firebaseConfig = {
+          //     apiKey: "你的APIKEY",
+          //     authDomain: "你的项目ID.firebaseapp.com",
+          //     databaseURL: "https://你的项目ID.firebaseio.com",
+          //     projectId: "你的项目ID",
+          //     storageBucket: "你的项目ID.appspot.com",
+          //     messagingSenderId: "发送者ID",
+          //     appId: "应用ID"
+          //};
 
           // 🔹 初始化 Firebase
           const app = initializeApp(firebaseConfig);
