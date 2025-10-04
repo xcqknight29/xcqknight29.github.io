@@ -73,21 +73,6 @@
 
      <script type="module">
 
-          // 假设你的JSON文件地址是：https://yourusername.github.io/your-repo/data/data.json
-          fetch('https://yourusername.github.io/your-repo/data/data.json')
-               .then(response => {
-                    if (!response.ok) {
-                         throw new Error('网络响应不正常');
-                    }
-                    return response.json();
-               })
-               .then(data => {
-                    // 在这里处理你的JSON数据
-                    console.log(data);
-               })
-               .catch(error => {
-                    console.error('获取数据时出错:', error);
-               });
 
           // 🔹 引入 Firebase SDK
           import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
@@ -95,14 +80,14 @@
 
           // 🔹 替换成你自己的 Firebase 配置
           const firebaseConfig = {
-               apiKey: "你的APIKEY",
-               authDomain: "你的项目ID.firebaseapp.com",
-               databaseURL: "https://你的项目ID.firebaseio.com",
-               projectId: "你的项目ID",
-               storageBucket: "你的项目ID.appspot.com",
-               messagingSenderId: "发送者ID",
-               appId: "应用ID"
-          };
+               apiKey: "AIzaSyBUJ1YVVmS8h1SX4tNHRrK_MchjqUIWwjU",
+               authDomain: "gentle-lace-fall.firebaseapp.com",
+               databaseURL: "https://gentle-lace-fall-default-rtdb.asia-southeast1.firebasedatabase.app",
+               projectId: "gentle-lace-fall",
+               storageBucket: "gentle-lace-fall.firebasestorage.app",
+               messagingSenderId: "354328807137",
+               appId: "1:354328807137:web:d808545cd047b92d5659a0"
+          }
 
           // 🔹 初始化 Firebase
           const app = initializeApp(firebaseConfig);
@@ -147,7 +132,7 @@
                }
           });
 
-          // 🔹 实时监听留言
+          // // 🔹 实时监听留言
           const messagesRef = ref(db, "messages");
           onChildAdded(messagesRef, (snapshot) => {
                const data = snapshot.val();
