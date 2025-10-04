@@ -74,7 +74,7 @@
      <script type="module">
 
           // 假设你的JSON文件地址是：https://yourusername.github.io/your-repo/data/data.json
-          fetch('https://yourusername.github.io/your-repo/data/data.json')
+          fetch('../static/data.json')
                .then(response => {
                     if (!response.ok) {
                          throw new Error('网络响应不正常');
